@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+</head>
+<body>
+    <h1> Feedback</h1>
+    <form action="{% url 'feedback:send_mail' %}" method="POST">
+        {% csrf_token %}
+    <table>
+        {% for dict in data %}
+        </br>
+        <tr>
+            <td>
+                <label> 
+                   {{dict.lbl}}
+                    <font color="red">
+                       *
+                    </font>
+                   : 
+                </label>
+            </td>
+            <td>
+                {% if dict.type == 'single line text' %}
+                    <input type="text" name="username" placeholder={{dict.placeholder}}  required />
+                {% elif dict.type == 'number' %}
+                    <input type="number" placeholder={{dict.placeholder}} name="ticket_number" required />
+                    
+                {% elif dict.type == 'paragraph' %}
+                    <textarea placeholder={{dict.placeholder}} name="feedback" required></textarea> 
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td>
+                <label>
+                    Email
+                    <font color="red">
+                        *
+                    </font>
+                    : 
+                </label>                
+            </td>
+            <td>
+                <input type="email" name="email" placeholder="Email ID" required/>
+            </td>
+        </tr>
+</table>
+ 
+<button type="submit">Submit</button>
+
+</form>
+
+</body>
+</html>
+
+
