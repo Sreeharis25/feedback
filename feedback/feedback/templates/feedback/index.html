@@ -22,12 +22,12 @@
             </td>
             <td>
                 {% if dict.type == 'single line text' %}
-                    <input type="text" name="username" placeholder={{dict.placeholder}}  required />
+                    <input type="text" name={{dict.id}} placeholder={{dict.placeholder}}  required />
                 {% elif dict.type == 'number' %}
-                    <input type="number" placeholder={{dict.placeholder}} name="ticket_number" required />
+                    <input type="number" placeholder={{dict.placeholder}} name={{dict.id}} required />
                     
                 {% elif dict.type == 'paragraph' %}
-                    <textarea placeholder={{dict.placeholder}} name="feedback" required></textarea> 
+                    <textarea placeholder={{dict.placeholder}} name={{dict.id}} required></textarea> 
                 {% endif %}
             </td>
         </tr>

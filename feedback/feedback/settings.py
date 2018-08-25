@@ -34,7 +34,7 @@ EMAIL_HOST = 'smtp.sparkpostmail.com'
 # Port for sending e-mail.
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'SMTP_Injection'
-EMAIL_HOST_PASSWORD = '3cf4f2e651ced1215c3daaa62fd69199da699238'
+EMAIL_HOST_PASSWORD = '1ee95ea1c915595887780ab3c8a9001a72395562'
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 
@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'feedbackapp'
 ]
 
 MIDDLEWARE = [

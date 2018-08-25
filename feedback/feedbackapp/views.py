@@ -43,18 +43,16 @@ def send_feedback_mail(request):
     """For sending feedback email according to feedback.
 
     Input Params:
-        ticket_number (int): Ticket Number for the feedback
-        username (str): Username
-        feedback (str): Feedback
+        ids (int): Corresponding value for each id for tags.
         email (email): Email Id of the user.
     """
     request_dict = {}
     try:
         request_dict['received_data'] = request.POST
         request_dict['mandatory_params'] = [
-            ('ticket_number', 'int'), ('username', 'str'),
-            ('feedback', 'str'), ('email', 'email')]
+            ('email', 'email')]
         email_dict = utilities.fetch_request_params(request_dict)
+        email_dict['received_data'] = request_dict['received_data']
 
         bll.send_feedback_mail(email_dict)
         data = render(request, 'feedback/success.html')
