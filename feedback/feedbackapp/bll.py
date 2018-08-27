@@ -18,7 +18,7 @@ def send_feedback_mail(email_dict):
     email_body = replace_email_body_tags(received_data)
 
     to = [email_dict['email']]
-    from_email = 'hubbler@cbsoft.co'
+    from_email = ''
     text_content = strip_tags(email_body)
 
     try:

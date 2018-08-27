@@ -30,11 +30,11 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 # Email settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.sparkpostmail.com'
+EMAIL_HOST = ''  # Host for sending email
 # Port for sending e-mail.
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'SMTP_Injection'
-EMAIL_HOST_PASSWORD = '1ee95ea1c915595887780ab3c8a9001a72395562'
+EMAIL_HOST_USER = ''  # User for sending mails
+EMAIL_HOST_PASSWORD = ''  # Email host password
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 
